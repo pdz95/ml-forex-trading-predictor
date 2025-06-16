@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy<2.0.0,>=1.24.0
+scikit-learn==1.6.1
+xgboost
+catboost
+lightgbm
+matplotlib
+plotly
+yfinance
+joblib
+boto3
