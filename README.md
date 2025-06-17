@@ -2,6 +2,11 @@
 
 Advanced EUR/USD movement prediction system using ensemble machine learning and multi-asset analysis.
 
+## Live Demo
+🚀 **[Try it live on AWS](http://3.94.54.203:8081)**
+
+This is a production-ready system deployed on AWS infrastructure.
+
 ## Key Features
 
 - **Next-day prediction** - Bullish/Bearish/Neutral signals
