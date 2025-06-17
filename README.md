@@ -104,7 +104,7 @@ eur-usd-ml-predictor/
 
 This system is an **educational and demonstration project**. It does not constitute investment advice. Do not use for actual trading decisions. Past performance does not guarantee future results.
 
-## For Recruiters
+## Executive Summary
 
 This project demonstrates:
 
