@@ -26,7 +26,7 @@ Advanced EUR/USD movement prediction system using ensemble machine learning and 
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/eur-usd-ml-predictor
+git clone https://github.com/pdz95/eur-usd-ml-predictor
 cd eur-usd-ml-predictor
 
 # Install dependencies
