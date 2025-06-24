@@ -27,7 +27,6 @@ class TradingModelPipeline:
         self.validation_size = validation_size
         self.model_list = ["logistic_regression", "xgboost", "catboost", "lightgbm"]
 
-        # Will be populated during pipeline
         self.df_ready = None
         self.X = None
         self.y = None
@@ -41,19 +40,19 @@ class TradingModelPipeline:
 
         logger.info("Preparing data...")
 
-        # EUR/USD features (NO SCALING) - DOKŁADNIE JAK W JUPYTER
+        # EUR/USD features (NO SCALING
         eurusd_data = DataDownloader(self.symbol).download_data()
         features_eurusd, _ = FeatureEngineer(
             eurusd_data,
             threshold_percentile=self.threshold_percentile,
-            apply_scaling=False  # ← KLUCZOWE: bez skalowania
+            apply_scaling=False  # < Key - no scaling
         ).create_features()
 
-        # Additional market indicators - DOKŁADNIE JAK W JUPYTER
+        # Additional market indicators 
         loader = MultiAssetDataLoader(threshold_percentile=self.threshold_percentile)
         features_additional = loader.load_all_assets()
 
-        # Merge raw data - DOKŁADNIE JAK W JUPYTER
+        # Merge raw data
         self.df_ready = features_eurusd.merge(features_additional, on='date', how='left')
         self.df_ready = self.df_ready.dropna()
 
