@@ -20,7 +20,7 @@ def create_sidebar():
 
         # GitHub
         st.markdown("""
-        [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/twoj-username/projekt)
+        [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/pdz95/ml-forex-trading-predictor/)
         """)
 
         # Email
