@@ -37,8 +37,6 @@ class FeatureEngineer:
         df = self.df.copy()
 
         df[self.date_col] = pd.to_datetime(df[self.date_col])
-
-        # NAJPIERW oblicz target na DZISIEJSZYCH cenach (bez shift)
         df['today_return'] = df[self.price_col].pct_change()
 
         # Threshold based on returns
@@ -176,18 +174,18 @@ class FeatureEngineer:
         if self.apply_scaling:
             from sklearn.preprocessing import StandardScaler
 
-        # Identyfikuj feature columns (bez target i date)
+        # Feature cols without tarher and returns
         feature_cols = [col for col in df.columns
                         if col not in [self.date_col, 'Target_signal', 'today_return']]
 
-        # Skalowanie features
+        # Feature scaling
         scaler = None
         if self.apply_scaling:
             scaler = StandardScaler()
             df[feature_cols] = scaler.fit_transform(df[feature_cols])
             self.scaler = scaler
 
-        # Konwersja na float64
+        # Conversion to float64
         numeric_cols = df.select_dtypes(include=['float', 'int']).columns
         df[numeric_cols] = df[numeric_cols].astype('float64')
 
