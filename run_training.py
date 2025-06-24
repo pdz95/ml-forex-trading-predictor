@@ -27,7 +27,7 @@ def main():
         # Initialize pipeline with your settings
         pipeline = TradingModelPipeline(
             symbol="EURUSD=X",
-            threshold_percentile=75,  # Your 75th percentile setting
+            threshold_percentile=75,  #  75th percentile setting - can be adjusted
             test_size=500,           # Adjust as needed
             validation_size=200       # Adjust as needed
         )
