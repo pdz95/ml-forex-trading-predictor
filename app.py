@@ -47,7 +47,7 @@ def get_stock_data_with_logs(symbol, period):
     logs = downloader.get_logs()
     return data, logs
 
-@st.cache_data(ttl=3600)  # Cache na godzinę
+@st.cache_data(ttl=43200)  # Cache for 12h
 def call_lambda_prediction():
     """Call lambda and return prediction"""
 
@@ -194,7 +194,7 @@ with tab2:
     with open('models/performance_plots.json', 'r') as f:
         plots = json.load(f)
 
-    # WYKRESY - pełna szerokość
+    # Plots
     col1, col2 = st.columns([1, 1])
 
     with col1:
@@ -207,8 +207,7 @@ with tab2:
         fig_pr = pio.from_json(plots['pr_fig'])
         st.plotly_chart(fig_pr, use_container_width=True)
 
-    # TEKST - poniżej wykresów
-    st.markdown("---")  # Separator
+    st.markdown("---")  
 
     col1, col2 = st.columns([1, 1])
 
