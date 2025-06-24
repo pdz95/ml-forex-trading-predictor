@@ -6,7 +6,7 @@ import time
 import random
 import logging
 
-# KONFIGURACJA LOGGERA
+# Logger conf
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -28,7 +28,7 @@ class DataDownloader:
         """Custom logging method"""
         log_entry = f"{time.strftime('%Y-%m-%d %H:%M:%S')} - {level} - {message}"
         self.logs.append(log_entry)
-        logger.info(message)  # Nadal loguj normalnie
+        logger.info(message)  
 
     def get_logs(self):
         """Zwróć zebrane logi"""
